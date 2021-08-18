@@ -1,0 +1,14 @@
+<div class='input-group-ember-idno-validator'>
+  <label data-test-input-label for={{'validator'}}>{{@labelTitle}}</label>
+  <Input
+    data-test-input
+    name='validator'
+    @value={{this.value}}
+    maxlength={{@inputLength}}
+    {{on 'keyup' (fn this.validate this.value)}}
+  />
+  <small
+    data-test-message-error
+    class='{{unless this.error 'input-group-ember-hide'}}'
+  >{{@errorMessage}}</small>
+</div>
