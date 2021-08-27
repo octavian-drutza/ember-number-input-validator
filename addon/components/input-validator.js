@@ -6,7 +6,7 @@ import { tracked } from '@glimmer/tracking';
 export default class InputValidatorComponent extends Component {
   restrictedSymb;
   minlength = '13';
-  maxlenght = '13';
+  maxlength = '13';
   @tracked value;
   @tracked error = false;
   @tracked validated = false;
