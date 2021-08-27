@@ -2,7 +2,12 @@
 
 <h2 id='title'>ember-number-input-validator Use Example</h2>
 
-<InputValidator @labelTitle={{'Input IDNP'}} @parentValue={{this.value}} />
+<InputValidator
+  @label={{if this.validated 'C.N.P Validat' 'Introduceti C.N.P'}}
+  @value={{fn (mut this.value)}}
+  @validated={{fn (mut this.validated)}}
+/>
+
 <div>{{this.value}}</div>
 
 {{outlet}}

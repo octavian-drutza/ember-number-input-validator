@@ -9,3 +9,7 @@
 .input-group-ember-hide {
   display: none;
 }
+
+.error {
+  background-color: red;
+}

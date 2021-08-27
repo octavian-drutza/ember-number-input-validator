@@ -1,18 +1,16 @@
 <div class='input-group-ember-idno-validator'>
-  <label data-test-input-label for={{'validator'}}>Introduceti C.N.P</label>
+  <label data-test-input-label for={{'validator'}}>{{@label}}</label>
   <input
-    id='validator'
     data-test-input
-    {{!    @type='number' }}
     name='validator'
+    class='{{if this.error 'error'}}'
     value={{this.value}}
-    maxlength='13'
-    {{on 'input' this.validate}}
-    {{on 'input' (fn (mut @parentValue) this.value)}}
-    {{!-- {{on 'change' (fn(mut {{get  }}))}} --}}
+    maxlength={{this.minlength}}
+    minlength={{this.maxlength}}
+    {{on 'keyup' this.validateInput}}
   />
   <small
     data-test-message-error
     class='{{unless this.error 'input-group-ember-hide'}}'
-  >Invalid symbol/number</small>
+  >Eroare</small>
 </div>
